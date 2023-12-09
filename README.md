@@ -9,9 +9,16 @@ I needed a radio receiver that would just turn on when I applied power and remem
 
 ## Features
 
-Super simple API
+### Super simple API
 
-* /setVolume?volume=10 - Set the volume to 10
-* /setFrequency?frequency=8980 - Set the frequency to 89.8
-* /setBass?bass=1 - Turn on bass boost
-* /save - Save values to EEPROM
+* /set?args - Where ars can be any combination of the following seperated by &:
+  * volume=10 - sets the volume to 10
+  * frequency=8980 - sets the frequency to 89.8
+  * bass=1 - enables bass boost
+  * hostname=radio - sets a new host/mdns name
+* /save - store current values persistently
+* /reset - performs a soft reset on the tuner
+
+#### Example request
+
+http://radio.local/set?volume=5&bass=0
